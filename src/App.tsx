@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import { AugmentedBirth, Birth, DatePickerValue, LikesMap } from "./types";
 import ResultsDisplay from "./components/ResultsDisplay";
+import LikesDisplay from "./components/LikesDisplay";
 
 function App() {
   const [tabValue, setTabValue] = useState(0);
@@ -66,6 +67,14 @@ function App() {
               isResultsLoading={isResultsLoading}
             />
           </>
+        </div>
+        <div
+          style={{
+            visibility: tabValue === 1 ? "visible" : "hidden",
+            height: tabValue === 1 ? "unset" : "0",
+          }}
+        >
+          <LikesDisplay likesMap={likesMap} />
         </div>
       </Box>
     </div>

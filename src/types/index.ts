@@ -14,3 +14,7 @@ export type AugmentedBirth = Birth & {
 };
 
 export type LikesMap = Record<string, AugmentedBirth>;
+
+export type LikesByDateMap = {
+  [key: string]: AugmentedBirth[];
+};
