@@ -11,7 +11,7 @@ type ListItemProps = {
 
 const ListItem = ({ item, likesMap, setLikesMap }: ListItemProps) => {
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <div data-testid="listitem" style={{ display: "flex", alignItems: "center" }}>
       <StarIcon
         style={{
           opacity: likesMap.hasOwnProperty(item.text) ? 1 : 0.3,

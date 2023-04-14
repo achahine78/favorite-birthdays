@@ -49,6 +49,7 @@ function App() {
           </Tabs>
         </Box>
         <div
+          data-testid="tabpanel1"
           style={{
             visibility: tabValue === 0 ? "visible" : "hidden",
             height: tabValue === 0 ? "unset" : "0",
@@ -72,6 +73,7 @@ function App() {
           </>
         </div>
         <div
+          data-testid="tabpanel2"
           style={{
             visibility: tabValue === 1 ? "visible" : "hidden",
             height: tabValue === 1 ? "unset" : "0",
