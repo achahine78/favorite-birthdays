@@ -1,7 +1,7 @@
 export type DatePickerValue = {
   $d: string;
-  $M: string;
-  $D: string;
+  $M: number;
+  $D: number;
 };
 
 export type Birth = {

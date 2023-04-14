@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AugmentedBirth, Birth, DatePickerValue, LikesMap } from "./types";
 import ResultsDisplay from "./components/ResultsDisplay";
 import LikesDisplay from "./components/LikesDisplay";
+import { padNumber } from "./utils";
 
 function App() {
   const [tabValue, setTabValue] = useState(0);
@@ -21,8 +22,10 @@ function App() {
     setIsResultsLoading(true);
     const date = dayjs(value?.$d).format("MMMM DD");
     const { $M, $D } = value!;
+    const month = padNumber($M + 1);
+    const day = padNumber($D);
     const { data } = await axios.get(
-      `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/${$M}/${$D}`
+      `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/births/${month}/${day}`
     );
 
     const { births } = data;
